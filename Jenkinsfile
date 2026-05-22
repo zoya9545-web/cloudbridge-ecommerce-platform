@@ -1,11 +1,13 @@
-pipeline {
+kpipeline {
     agent any
 
     stages {
 
         stage('Clone Code') {
             steps {
-                git 'https://github.com/zoya9545-web/cloudbridge-ecommerce-platform.git'
+                git branch: 'main',
+                credentialsId: 'github-creds',
+                url: 'https://github.com/zoya9545-web/cloudbridge-ecommerce-platform.git'
             }
         }
 
